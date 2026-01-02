@@ -85,7 +85,7 @@ export default function FirstTrimester() {
         description="Weeks 1-13 bring incredible transformation as your baby develops from a tiny cluster of cells to a fully formed little human. Navigate this foundational period with confidence and care."
         icon={Sparkles}
         gradient="bg-gradient-to-br from-[var(--color-lavender)]/40 via-[var(--color-blush)]/20 to-[var(--color-cream)]"
-        mascotVariant="meditation"
+        imageSrc="/mascots/first-trimester-lunebloom.png"
         weeks="Weeks 1-13"
       />
 

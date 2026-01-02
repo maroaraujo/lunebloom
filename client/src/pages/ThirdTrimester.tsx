@@ -88,6 +88,7 @@ export default function ThirdTrimester() {
         mascotVariant="bloom"
         weeks="Weeks 28-40"
       />
+      {/* TODO: Replace with ThirdTrimesterLunebloom.png when available */}
 
       <div className="container py-8">
         {/* Quick Navigation */}

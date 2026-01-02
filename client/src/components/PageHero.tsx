@@ -11,6 +11,7 @@ interface PageHeroProps {
   gradient: string;
   mascotVariant?: "hero" | "meditation" | "belly" | "bloom" | "rest" | "skincare" | "exercise" | "nutrition";
   weeks?: string;
+  imageSrc?: string;
 }
 
 export default function PageHero({
@@ -21,6 +22,7 @@ export default function PageHero({
   gradient,
   mascotVariant = "hero",
   weeks,
+  imageSrc,
 }: PageHeroProps) {
   return (
     <section className="relative overflow-hidden">
@@ -58,7 +60,15 @@ export default function PageHero({
           
           {/* Mascot */}
           <div className="flex justify-center">
-            <LunebloomMascot variant={mascotVariant} size="lg" className="animate-float" />
+            {imageSrc ? (
+              <img 
+                src={imageSrc} 
+                alt="Lunebloom mascot" 
+                className="w-full max-w-md h-auto drop-shadow-lg animate-float"
+              />
+            ) : (
+              <LunebloomMascot variant={mascotVariant} size="lg" className="animate-float" />
+            )}
           </div>
         </div>
       </div>

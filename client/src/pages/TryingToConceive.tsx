@@ -96,7 +96,7 @@ export default function TryingToConceive() {
         description="Prepare your body and mind for the beautiful journey ahead. Our evidence-based guidance helps you optimize your fertility naturally while building healthy habits for pregnancy."
         icon={Heart}
         gradient="bg-gradient-to-br from-[var(--color-blush)]/40 via-[var(--color-lavender)]/20 to-[var(--color-cream)]"
-        mascotVariant="meditation"
+        imageSrc="/mascots/ttc-lunebloom.png"
       />
 
       <div className="container py-8">

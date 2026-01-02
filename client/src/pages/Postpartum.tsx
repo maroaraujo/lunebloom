@@ -98,6 +98,7 @@ export default function Postpartum() {
         mascotVariant="rest"
         weeks="0-12 Weeks Postpartum"
       />
+      {/* TODO: Replace with PostpartumLunebloom.png when available */}
 
       <div className="container py-8">
         {/* Quick Navigation */}

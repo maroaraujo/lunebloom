@@ -97,6 +97,7 @@ export default function SecondTrimester() {
         mascotVariant="belly"
         weeks="Weeks 14-27"
       />
+      {/* TODO: Replace with SecondTrimesterLunebloom.png when available */}
 
       <div className="container py-8">
         {/* Quick Navigation */}

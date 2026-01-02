@@ -115,15 +115,7 @@ export default function Home() {
             
             {/* Mascot illustration */}
             <div className="flex justify-center order-1 lg:order-2">
-              <div className="relative">
-                {/* Garden elements */}
-                <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-[120%] h-24">
-                  <svg viewBox="0 0 400 100" className="w-full h-full" preserveAspectRatio="none">
-                    <ellipse cx="200" cy="80" rx="180" ry="40" fill="var(--color-mint)" opacity="0.3" />
-                    <ellipse cx="200" cy="85" rx="150" ry="30" fill="var(--color-mint)" opacity="0.4" />
-                  </svg>
-                </div>
-                
+              <div className="relative w-full max-w-md">
                 {/* Floating flowers */}
                 <div className="absolute -left-8 top-1/4 animate-float">
                   <Flower2 className="w-8 h-8 text-[var(--color-blush)]" />
@@ -135,8 +127,12 @@ export default function Home() {
                   <Flower2 className="w-5 h-5 text-[var(--color-peach)]" />
                 </div>
                 
-                {/* Main mascot */}
-                <LunebloomMascot variant="hero" size="xl" className="animate-float" />
+                {/* Main mascot - PNG image */}
+                <img 
+                  src="/mascots/landing-lunebloom.png" 
+                  alt="Lunebloom mascot" 
+                  className="w-full h-auto drop-shadow-lg animate-float"
+                />
               </div>
             </div>
           </div>

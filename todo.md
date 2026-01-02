@@ -10,6 +10,7 @@
 - [x] Interactive phase selection cards (5 phases)
 - [x] Trust indicators section
 - [x] Welcome message and value proposition
+- [x] Custom PNG mascot image integrated (Landing page)
 
 ## Content Pages
 - [x] Trying to Conceive page with all sections
@@ -32,8 +33,19 @@
 - [x] Support links and hotlines
 - [x] Scientific references compilation
 
+## Mascot Integration
+- [x] Lunebloom mascot SVG component for fallback
+- [x] PageHero component updated to support custom PNG images
+- [x] Landing page mascot (LandingpageLunebloom.png) integrated
+- [x] Trying to Conceive mascot (TryingtoconcieveLunebloom.png) integrated
+- [x] First Trimester mascot (FirstTrimesterLunebloom.png) integrated
+- [ ] Second Trimester mascot (SecondTrimesterLunebloom.png) - ready for integration
+- [ ] Third Trimester mascot (ThirdTrimesterLunebloom.png) - ready for integration
+- [ ] Postpartum mascot (PostpartumLunebloom.png) - ready for integration
+
 ## Design & Polish
 - [x] Lunebloom mascot SVG illustrations for each section
 - [x] Consistent pastel aesthetic throughout
 - [x] Responsive design for mobile/tablet
 - [x] Smooth animations and transitions
+- [x] Custom PNG mascot images replacing SVG placeholders
