@@ -94,10 +94,9 @@ export default function SecondTrimester() {
         description="Welcome to the 'honeymoon phase' of pregnancy! Many women feel their best during weeks 14-27 as nausea fades and energy returns. Your baby is growing rapidly and you'll soon feel those magical first kicks."
         icon={Flower2}
         gradient="bg-gradient-to-br from-[var(--color-peach)]/40 via-[var(--color-blush)]/20 to-[var(--color-cream)]"
-        mascotVariant="belly"
+        imageSrc="/mascots/second-trimester-lunebloom.png"
         weeks="Weeks 14-27"
       />
-      {/* TODO: Replace with SecondTrimesterLunebloom.png when available */}
 
       <div className="container py-8">
         {/* Quick Navigation */}

@@ -85,10 +85,9 @@ export default function ThirdTrimester() {
         description="You're in the home stretch! Weeks 28-40 bring final preparations as your baby gains weight and you prepare for the big day. Focus on rest, preparation, and listening to your body."
         icon={Sun}
         gradient="bg-gradient-to-br from-[var(--color-mint)]/40 via-[var(--color-peach)]/20 to-[var(--color-cream)]"
-        mascotVariant="bloom"
+        imageSrc="/mascots/third-trimester-lunebloom.png"
         weeks="Weeks 28-40"
       />
-      {/* TODO: Replace with ThirdTrimesterLunebloom.png when available */}
 
       <div className="container py-8">
         {/* Quick Navigation */}

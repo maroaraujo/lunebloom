@@ -95,10 +95,9 @@ export default function Postpartum() {
         description="Congratulations on your new arrival! The fourth trimester is a time of profound adjustment, healing, and bonding. Be patient and compassionate with yourself as you navigate this beautiful new chapter."
         icon={Baby}
         gradient="bg-gradient-to-br from-[var(--color-blush)]/40 via-[var(--color-lavender)]/20 to-[var(--color-cream)]"
-        mascotVariant="rest"
+        imageSrc="/mascots/postpartum-lunebloom.png"
         weeks="0-12 Weeks Postpartum"
       />
-      {/* TODO: Replace with PostpartumLunebloom.png when available */}
 
       <div className="container py-8">
         {/* Quick Navigation */}
