@@ -42,6 +42,8 @@
 - [x] Second Trimester mascot (SecondtrimesterLunebloom.png) integrated
 - [x] Third Trimester mascot (thirdtrimesterLunebloom.png) integrated
 - [x] Postpartum mascot (PostpartumLunebloom.png) integrated
+- [x] Guide Lunebloom (lunebloomflipped.png) integrated in homepage CTA section
+- [x] Guide Lunebloom integrated in Resources page header
 
 ## Design & Polish
 - [x] Lunebloom mascot SVG illustrations for each section

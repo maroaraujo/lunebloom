@@ -266,7 +266,11 @@ export default function Home() {
       <section className="py-16 lg:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-lavender)]/30 via-[var(--color-blush)]/20 to-[var(--color-peach)]/30" />
         <div className="container relative text-center">
-          <LunebloomMascot variant="bloom" size="md" className="mx-auto mb-8" />
+          <img 
+            src="/mascots/lunebloom-guide.png" 
+            alt="Lunebloom guide" 
+            className="w-48 h-auto mx-auto mb-8 drop-shadow-lg"
+          />
           <h2 className="text-3xl md:text-4xl font-[var(--font-heading)] font-bold mb-4">
             Ready to Begin Your Journey?
           </h2>

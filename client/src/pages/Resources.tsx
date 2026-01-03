@@ -175,7 +175,11 @@ export default function Resources() {
             </div>
             
             <div className="flex justify-center">
-              <LunebloomMascot variant="hero" size="lg" className="animate-float" />
+              <img 
+                src="/mascots/lunebloom-guide.png" 
+                alt="Lunebloom guide" 
+                className="w-64 h-auto drop-shadow-lg animate-float"
+              />
             </div>
           </div>
         </div>
