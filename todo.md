@@ -51,3 +51,6 @@
 - [x] Responsive design for mobile/tablet
 - [x] Smooth animations and transitions
 - [x] Custom PNG mascot images replacing SVG placeholders for all phases
+
+## Bug Fixes
+- [x] Fix scroll-to-top bug when navigating between pages
