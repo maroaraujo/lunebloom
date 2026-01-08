@@ -4,6 +4,7 @@ import ContentSection from "@/components/ContentSection";
 import DataTable from "@/components/DataTable";
 import TipBox from "@/components/TipBox";
 import MocktailCard from "@/components/MocktailCard";
+import PostpartumExercises from "@/components/PostpartumExercises";
 import { 
   Baby, 
   Leaf, 
@@ -206,21 +207,7 @@ export default function Postpartum() {
             intense exercise.<sup className="text-[var(--color-rose)]">[2]</sup>
           </p>
 
-          <DataTable
-            columns={[
-              { key: "exercise", header: "Exercise" },
-              { key: "timing", header: "When to Start" },
-              { key: "duration", header: "Duration" },
-              { key: "benefits", header: "Benefits" },
-            ]}
-            data={exerciseData}
-            variant="neutral"
-          />
-
-          <TipBox type="info" title="Diastasis Recti">
-            Many women experience abdominal separation during pregnancy. 
-            Work with a pelvic floor physical therapist before doing traditional ab exercises.
-          </TipBox>
+          <PostpartumExercises />
         </ContentSection>
 
         {/* Medical Care Section */}

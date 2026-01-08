@@ -4,6 +4,7 @@ import ContentSection from "@/components/ContentSection";
 import DataTable from "@/components/DataTable";
 import TipBox from "@/components/TipBox";
 import MocktailCard from "@/components/MocktailCard";
+import ThirdTrimesterExercises from "@/components/ThirdTrimesterExercises";
 import { 
   Sun, 
   Leaf, 
@@ -159,21 +160,7 @@ export default function ThirdTrimester() {
             <sup className="text-[var(--color-rose)]">[2]</sup>
           </p>
 
-          <DataTable
-            columns={[
-              { key: "exercise", header: "Exercise" },
-              { key: "duration", header: "Duration" },
-              { key: "muscles", header: "Focus Area" },
-              { key: "benefits", header: "Benefits" },
-            ]}
-            data={exerciseData}
-            variant="neutral"
-          />
-
-          <TipBox type="warning" title="Listen to Your Body">
-            Stop any exercise that causes pain, dizziness, or contractions. 
-            Your body is working hard—rest when you need to.
-          </TipBox>
+          <ThirdTrimesterExercises />
         </ContentSection>
 
         {/* Medical Care Section */}

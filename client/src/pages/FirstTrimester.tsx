@@ -4,6 +4,7 @@ import ContentSection from "@/components/ContentSection";
 import DataTable from "@/components/DataTable";
 import TipBox from "@/components/TipBox";
 import MocktailCard from "@/components/MocktailCard";
+import FirstTrimesterExercises from "@/components/FirstTrimesterExercises";
 import { 
   Sparkles, 
   Leaf, 
@@ -21,14 +22,6 @@ const nutritionData = [
   { nutrient: "Ginger", amount: "As needed", source: "Fresh ginger, ginger tea", benefit: "Natural nausea relief" },
   { nutrient: "Protein", amount: "75g/day", source: "Lean meats, eggs, legumes, dairy", benefit: "Tissue growth and repair" },
   { nutrient: "Calcium", amount: "1000 mg/day", source: "Dairy, fortified plant milk", benefit: "Bone and teeth development" },
-];
-
-const exerciseData = [
-  { exercise: "Walking", duration: "20-30 min/day", muscles: "Legs, core", benefits: "Low impact, reduces fatigue" },
-  { exercise: "Prenatal Yoga", duration: "20-30 min", muscles: "Full body, flexibility", benefits: "Reduces stress, gentle stretching" },
-  { exercise: "Swimming", duration: "20-30 min", muscles: "Full body", benefits: "Supports joints, cooling" },
-  { exercise: "Stationary Cycling", duration: "15-20 min", muscles: "Legs, cardiovascular", benefits: "Low impact cardio" },
-  { exercise: "Kegel Exercises", duration: "3 sets of 10", muscles: "Pelvic floor", benefits: "Prepares for labor, prevents incontinence" },
 ];
 
 const medicalTests = [
@@ -161,28 +154,15 @@ export default function FirstTrimester() {
         </ContentSection>
 
         {/* Exercise Section */}
-        <ContentSection title="Safe Exercise in Early Pregnancy" icon={Dumbbell} id="exercise">
+        <ContentSection title="Exercise: Staying Active & Healthy" icon={Dumbbell} id="exercise">
           <p className="mb-6">
-            If you were active before pregnancy, you can generally continue your routine with modifications. 
-            The <strong>ACOG</strong> recommends 150 minutes of moderate exercise per week during pregnancy 
-            for most women.<sup className="text-[var(--color-rose)]">[2]</sup>
+            Staying active during pregnancy is beneficial for both you and your baby. Regular exercise 
+            can help manage weight gain, reduce gestational diabetes risk, and improve mood. Always consult 
+            with your healthcare provider before starting a new exercise routine.
+            <sup className="text-[var(--color-rose)]">[2]</sup>
           </p>
-
-          <DataTable
-            columns={[
-              { key: "exercise", header: "Exercise" },
-              { key: "duration", header: "Duration" },
-              { key: "muscles", header: "Muscles Worked" },
-              { key: "benefits", header: "Benefits" },
-            ]}
-            data={exerciseData}
-            variant="neutral"
-          />
-
-          <TipBox type="warning" title="Exercise Precautions">
-            Stop exercising and contact your provider if you experience: vaginal bleeding, dizziness, 
-            headache, chest pain, calf pain or swelling, or contractions.
-          </TipBox>
+          
+          <FirstTrimesterExercises />
         </ContentSection>
 
         {/* Medical Care Section */}
@@ -256,48 +236,40 @@ export default function FirstTrimester() {
         </ContentSection>
 
         {/* Mental Health Section */}
-        <ContentSection title="Emotional Wellbeing" icon={Brain} id="mental-health">
+        <ContentSection title="Mental Health & Emotional Wellness" icon={Brain} id="mental-health">
           <p className="mb-6">
-            The first trimester can be an emotional rollercoaster. Hormonal changes, physical symptoms, 
-            and the weight of this new reality can bring a mix of joy, anxiety, and everything in between. 
-            All of these feelings are completely normal.
+            The first trimester brings a whirlwind of emotions—excitement, anxiety, joy, and fear are all normal. 
+            Your hormones are shifting dramatically, which can affect your mood and emotional well-being.
           </p>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 rounded-xl bg-[var(--color-lavender)]/20">
-              <h3 className="font-[var(--font-heading)] font-semibold mb-4">Common Feelings</h3>
-              <ul className="space-y-2 text-sm">
-                <li>• Excitement mixed with anxiety</li>
-                <li>• Fear of miscarriage</li>
-                <li>• Overwhelm about the future</li>
-                <li>• Frustration with symptoms</li>
-                <li>• Joy at this new chapter</li>
+          <div className="grid md:grid-cols-2 gap-6 mt-8">
+            <TipBox type="tip" title="Self-Care Practices">
+              <ul className="list-disc list-inside space-y-2 text-sm">
+                <li>Practice meditation or prenatal yoga</li>
+                <li>Journal your feelings and experiences</li>
+                <li>Connect with other pregnant women</li>
+                <li>Take walks in nature</li>
+                <li>Get adequate sleep</li>
               </ul>
-            </div>
+            </TipBox>
 
-            <div className="p-6 rounded-xl bg-[var(--color-mint)]/20">
-              <h3 className="font-[var(--font-heading)] font-semibold mb-4">Coping Strategies</h3>
-              <ul className="space-y-2 text-sm">
-                <li>• Rest when you need to</li>
-                <li>• Share feelings with your partner</li>
-                <li>• Connect with other expecting parents</li>
-                <li>• Practice gentle self-care</li>
-                <li>• Limit stressful news/media</li>
+            <TipBox type="info" title="When to Seek Support">
+              <ul className="list-disc list-inside space-y-2 text-sm">
+                <li>Persistent sadness or anxiety</li>
+                <li>Inability to enjoy activities</li>
+                <li>Thoughts of harming yourself</li>
+                <li>Overwhelming stress about pregnancy</li>
+                <li>Relationship difficulties</li>
               </ul>
-            </div>
+            </TipBox>
           </div>
-
-          <TipBox type="love" title="Be Gentle With Yourself">
-            Growing a human is hard work! It's okay to feel tired, emotional, or overwhelmed. 
-            Rest when you need to and celebrate the small victories.
-          </TipBox>
         </ContentSection>
 
         {/* Mocktails Section */}
-        <ContentSection title="Soothing Mocktails" icon={Sparkles} id="mocktails">
+        <ContentSection title="Mocktails: Delicious & Pregnancy-Safe" icon={Sparkles} id="mocktails">
           <p className="mb-6">
-            These mocktails are designed with first trimester symptoms in mind—soothing ginger 
-            for nausea and refreshing citrus for energy.
+            Enjoy refreshing, alcohol-free beverages that support your health and satisfy cravings. 
+            These mocktails are designed to help with common pregnancy symptoms while being delicious!
           </p>
 
           <div className="grid md:grid-cols-2 gap-6 mt-8">
@@ -306,21 +278,6 @@ export default function FirstTrimester() {
             ))}
           </div>
         </ContentSection>
-
-        {/* References */}
-        <section className="py-12 border-t border-border mt-12">
-          <h2 className="text-xl font-[var(--font-heading)] font-semibold mb-6">Scientific References</h2>
-          <ol className="space-y-3 text-sm text-muted-foreground">
-            <li>
-              <span className="text-[var(--color-rose)]">[1]</span> National Institutes of Health. (2024). 
-              <em> Dietary Supplements During Pregnancy.</em> Office of Dietary Supplements.
-            </li>
-            <li>
-              <span className="text-[var(--color-rose)]">[2]</span> American College of Obstetricians and Gynecologists. (2020). 
-              <em> Physical Activity and Exercise During Pregnancy.</em> ACOG Committee Opinion No. 804.
-            </li>
-          </ol>
-        </section>
       </div>
     </Layout>
   );

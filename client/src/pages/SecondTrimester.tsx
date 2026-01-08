@@ -4,6 +4,7 @@ import ContentSection from "@/components/ContentSection";
 import DataTable from "@/components/DataTable";
 import TipBox from "@/components/TipBox";
 import MocktailCard from "@/components/MocktailCard";
+import SecondTrimesterExercises from "@/components/SecondTrimesterExercises";
 import { 
   Flower2, 
   Leaf, 
@@ -167,21 +168,7 @@ export default function SecondTrimester() {
             <sup className="text-[var(--color-rose)]">[2]</sup>
           </p>
 
-          <DataTable
-            columns={[
-              { key: "exercise", header: "Exercise" },
-              { key: "duration", header: "Duration" },
-              { key: "muscles", header: "Muscles Worked" },
-              { key: "benefits", header: "Benefits" },
-            ]}
-            data={exerciseData}
-            variant="neutral"
-          />
-
-          <TipBox type="warning" title="Modifications Needed">
-            After 20 weeks, avoid exercises lying flat on your back for extended periods. 
-            The weight of your uterus can compress major blood vessels. Use an incline instead.
-          </TipBox>
+          <SecondTrimesterExercises />
         </ContentSection>
 
         {/* Medical Care Section */}
