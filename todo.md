@@ -56,24 +56,16 @@
 - [x] Fix scroll-to-top bug when navigating between pages
 
 
-## Exercise Sections - IN PROGRESS
-- [ ] Research safe gym exercises for trying to conceive phase
-- [ ] Research safe gym exercises for first trimester
-- [ ] Research safe gym exercises for second trimester
-- [ ] Research safe gym exercises for third trimester
-- [ ] Research safe postpartum recovery exercises
-- [ ] Generate exercise illustrations for all phases
-- [ ] Create ExerciseCard component for exercise display
-- [ ] Integrate detailed exercise sections into Trying to Conceive page
-- [ ] Integrate detailed exercise sections into First Trimester page
-- [ ] Integrate detailed exercise sections into Second Trimester page
-- [ ] Integrate detailed exercise sections into Third Trimester page
-- [ ] Integrate detailed exercise sections into Postpartum page
-
-## New Features - IN PROGRESS
-- [ ] Create detailed gym exercise modal component
-- [ ] Integrate exercise modals into FirstTrimesterExercises
-- [ ] Integrate exercise modals into SecondTrimesterExercises
-- [ ] Integrate exercise modals into ThirdTrimesterExercises
-- [ ] Integrate exercise modals into PostpartumExercises
-- [ ] Fix mobile responsiveness of Lunebloom mascot on landing page
+## Exercise Sections - COMPLETE ✨
+- [x] Research safe gym exercises for trying to conceive phase
+- [x] Research safe gym exercises for first trimester
+- [x] Research safe gym exercises for second trimester
+- [x] Research safe gym exercises for third trimester
+- [x] Research safe postpartum recovery exercises
+- [x] Create GymExerciseModal component for detailed exercise display
+- [x] Integrate exercise modals into TryingToConceiveExercises
+- [x] Integrate exercise modals into FirstTrimesterExercises
+- [x] Integrate exercise modals into SecondTrimesterExercises
+- [x] Integrate exercise modals into ThirdTrimesterExercises
+- [x] Integrate exercise modals into PostpartumExercises
+- [x] All pages now have both regular exercise suggestions AND detailed gym exercise modals

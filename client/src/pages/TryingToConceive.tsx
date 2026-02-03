@@ -4,6 +4,7 @@ import ContentSection from "@/components/ContentSection";
 import DataTable from "@/components/DataTable";
 import TipBox from "@/components/TipBox";
 import MocktailCard from "@/components/MocktailCard";
+import TryingToConceiveExercises from "@/components/TryingToConceiveExercises";
 import { Badge } from "@/components/ui/badge";
 import { 
   Heart, 
@@ -186,6 +187,8 @@ export default function TryingToConceive() {
             data={exerciseData}
             variant="neutral"
           />
+
+          <TryingToConceiveExercises />
 
           <TipBox type="love" title="Listen to Your Body">
             While exercise is beneficial, avoid overtraining. Excessive high-intensity exercise can 

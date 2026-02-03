@@ -1,300 +1,160 @@
-import React from 'react';
-import ExerciseCard from './ExerciseCard';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import GymExerciseModal, { GymExercise } from "./GymExerciseModal";
+import TipBox from "./TipBox";
+
+const thirdTrimesterExercises: GymExercise[] = [
+  {
+    name: "Modified Squats (Wall Support)",
+    description: "Strengthens legs and opens the pelvis in preparation for labor.",
+    sets: 3,
+    reps: "10-12 reps",
+    difficulty: "beginner",
+    muscleGroups: ["Quadriceps", "Glutes", "Hamstrings", "Core"],
+    benefits: [
+      "Strengthens legs for labor",
+      "Opens pelvis naturally",
+      "Improves balance and stability",
+      "Reduces pressure on joints"
+    ],
+    modifications: "Keep back against wall. Feet shoulder-width apart. Lower slowly with control. Do not go below 90 degrees.",
+    cautions: "Use wall for support. Stop if you feel dizzy. Do not squat too deeply.",
+  },
+  {
+    name: "Pelvic Floor Exercises (Kegels)",
+    description: "Essential for preparing your pelvic floor for labor and recovery.",
+    sets: 3,
+    reps: "10-15 contractions",
+    difficulty: "beginner",
+    muscleGroups: ["Pelvic Floor"],
+    benefits: [
+      "Strengthens pelvic floor for labor",
+      "Prepares for delivery",
+      "Improves bladder control",
+      "Aids postpartum recovery"
+    ],
+    modifications: "Identify pelvic floor muscles. Contract for 3-5 seconds, relax for 3-5 seconds. Do not hold breath.",
+    cautions: "Do not do Kegels while urinating. Avoid overdoing them.",
+  },
+  {
+    name: "Walking (Increased Duration)",
+    description: "Excellent cardiovascular exercise that prepares your body for labor.",
+    sets: 1,
+    reps: "45-60 minutes daily",
+    difficulty: "beginner",
+    muscleGroups: ["Legs", "Core", "Cardiovascular"],
+    benefits: [
+      "Excellent cardiovascular exercise",
+      "Prepares body for labor",
+      "Reduces swelling and discomfort",
+      "Improves mood and energy"
+    ],
+    modifications: "Walk at comfortable pace. Stay well hydrated. Wear supportive shoes. Walk on flat surfaces.",
+    cautions: "Stop if dizzy or uncomfortable. Avoid overheating. Listen to your body.",
+  },
+  {
+    name: "Prenatal Yoga (Gentle)",
+    description: "Improves flexibility and calms your nervous system as you prepare for birth.",
+    sets: 1,
+    reps: "30-45 minutes",
+    difficulty: "beginner",
+    muscleGroups: ["Full Body", "Flexibility", "Core"],
+    benefits: [
+      "Improves flexibility and range of motion",
+      "Reduces back pain and discomfort",
+      "Calms nervous system",
+      "Prepares mentally and physically for labor"
+    ],
+    modifications: "Focus on gentle stretches. Avoid deep twists. Do not lie flat on back. Use props for support.",
+    cautions: "Listen to your body. Modify poses as needed. Stop if you feel uncomfortable.",
+  },
+  {
+    name: "Swimming or Water Aerobics",
+    description: "Full-body, low-impact exercise that feels amazing during the third trimester.",
+    sets: 1,
+    reps: "20-30 minutes",
+    difficulty: "beginner",
+    muscleGroups: ["Full Body", "Cardiovascular", "Shoulders", "Back", "Legs"],
+    benefits: [
+      "Relieves back pain and joint pressure",
+      "Supports your growing body",
+      "Full-body workout",
+      "Cooling and comfortable sensation"
+    ],
+    modifications: "Water walking, water aerobics, or gentle swimming. Use kickboard for support if needed.",
+    cautions: "Avoid diving. Stay hydrated even in water. Avoid overheating.",
+  },
+  {
+    name: "Side-Lying Leg Lifts",
+    description: "Targets hip stabilizers and outer thighs without straining your abdomen.",
+    sets: 3,
+    reps: "12 reps each side",
+    difficulty: "beginner",
+    muscleGroups: ["Glutes", "Hip Abductors", "Outer Thighs"],
+    benefits: [
+      "Strengthens hip stabilizers",
+      "Reduces hip and pelvic pain",
+      "Improves balance",
+      "Prepares for labor positions"
+    ],
+    modifications: "Lie on your side with hips stacked. Lift top leg slowly. Keep core engaged. Use pillow between knees.",
+    cautions: "Avoid lying flat on your back. Use pillow for comfort.",
+  },
+];
 
 export default function ThirdTrimesterExercises() {
-  const exercises = [
-    {
-      name: 'Modified Squats (Wall Support)',
-      image: '/exercises/wall-squats-third.png',
-      sets: 3,
-      reps: '10-12',
-      benefits: [
-        'Strengthens legs for labor',
-        'Opens pelvis',
-        'Improves balance',
-        'Reduces pressure on joints',
-      ],
-      formTips: [
-        'Keep back against wall',
-        'Feet shoulder-width apart',
-        'Lower slowly with control',
-        'Do not go below 90 degrees',
-        'Use wall for support',
-      ],
-      modifications: [
-        'Reduce depth of squat',
-        'Use chair for support',
-        'Hold onto resistance band',
-      ],
-      musclesWorked: ['Quadriceps', 'Glutes', 'Hamstrings', 'Core'],
-      difficulty: 'easy' as const,
-    },
-    {
-      name: 'Pelvic Floor Exercises (Kegels)',
-      image: '/exercises/pelvic-floor.png',
-      duration: 'Daily, 3 sets of 10',
-      benefits: [
-        'Strengthens pelvic floor',
-        'Prepares for labor',
-        'Improves bladder control',
-        'Aids postpartum recovery',
-      ],
-      formTips: [
-        'Identify pelvic floor muscles',
-        'Contract for 3-5 seconds',
-        'Relax for 3-5 seconds',
-        'Do not hold breath',
-        'Repeat 10 times',
-      ],
-      modifications: [
-        'Do exercises while sitting',
-        'Do exercises while lying down',
-        'Reduce duration if uncomfortable',
-      ],
-      musclesWorked: ['Pelvic Floor'],
-      difficulty: 'easy' as const,
-    },
-    {
-      name: 'Walking (Increased)',
-      image: '/exercises/pregnancy-walking.png',
-      duration: '45-60 minutes daily',
-      benefits: [
-        'Excellent cardiovascular exercise',
-        'Prepares body for labor',
-        'Reduces swelling',
-        'Improves mood',
-      ],
-      formTips: [
-        'Walk at comfortable pace',
-        'Stay well hydrated',
-        'Wear supportive shoes',
-        'Walk on flat surfaces',
-        'Stop if dizzy or uncomfortable',
-      ],
-      modifications: [
-        'Walk shorter distances',
-        'Take breaks as needed',
-        'Walk indoors if weather is bad',
-      ],
-      musclesWorked: ['Legs', 'Core', 'Cardiovascular'],
-      difficulty: 'easy' as const,
-    },
-    {
-      name: 'Prenatal Yoga (Gentle)',
-      image: '/exercises/prenatal-yoga-gentle.png',
-      duration: '30-45 minutes',
-      benefits: [
-        'Improves flexibility',
-        'Reduces back pain',
-        'Calms nervous system',
-        'Prepares for labor',
-      ],
-      formTips: [
-        'Focus on gentle stretches',
-        'Avoid deep twists',
-        'Do not lie flat on back',
-        'Breathe deeply',
-        'Listen to your body',
-      ],
-      modifications: [
-        'Use props for support',
-        'Take prenatal yoga class',
-        'Use online guided videos',
-      ],
-      musclesWorked: ['Full Body', 'Flexibility', 'Core'],
-      difficulty: 'easy' as const,
-    },
-    {
-      name: 'Swimming (Low Impact)',
-      image: '/exercises/pregnancy-swimming.png',
-      duration: '20-30 minutes',
-      benefits: [
-        'Relieves back pain',
-        'Supports joints',
-        'Full body workout',
-        'Cooling and comfortable',
-      ],
-      formTips: [
-        'Use pool with lifeguard',
-        'Avoid diving',
-        'Use gentle strokes',
-        'Stay hydrated',
-        'Stop if uncomfortable',
-      ],
-      modifications: [
-        'Water walking instead',
-        'Floating exercises',
-        'Aqua aerobics class',
-      ],
-      musclesWorked: ['Full Body', 'Cardiovascular'],
-      difficulty: 'easy' as const,
-    },
-  ];
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="space-y-8">
-      <div className="bg-gradient-to-r from-soft-blush/30 to-gentle-lavender/30 rounded-2xl p-8 border border-soft-blush">
-        <h3 className="text-2xl font-bold text-dark-text mb-4">💪 Third Trimester Gym Routine</h3>
-        <p className="text-gray-700 mb-4">
+    <div className="space-y-6">
+      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-blush)]/20 to-[var(--color-lavender)]/20">
+        <h3 className="font-[var(--font-heading)] font-semibold text-lg mb-4">
+          Safe Gym Exercises for Third Trimester
+        </h3>
+        <p className="text-sm mb-4">
           The third trimester is about preparing your body for labor and managing discomfort. 
           Exercise becomes gentler and more focused on pelvic floor strengthening and flexibility. 
           Listen to your body and modify as needed—your comfort and safety are paramount.
         </p>
-        <div className="grid md:grid-cols-2 gap-4">
-          <div className="bg-white rounded-lg p-4">
-            <h4 className="font-semibold text-dark-text mb-2">Recommended Frequency</h4>
-            <p className="text-gray-700">3-4 days per week, gentler intensity</p>
-          </div>
-          <div className="bg-white rounded-lg p-4">
-            <h4 className="font-semibold text-dark-text mb-2">Focus</h4>
-            <p className="text-gray-700">Pelvic floor, flexibility, and comfort</p>
-          </div>
-          <div className="bg-white rounded-lg p-4">
-            <h4 className="font-semibold text-dark-text mb-2">Intensity</h4>
-            <p className="text-gray-700">Light to moderate, listen to your body</p>
-          </div>
-          <div className="bg-white rounded-lg p-4">
-            <h4 className="font-semibold text-dark-text mb-2">Key Goal</h4>
-            <p className="text-gray-700">Prepare for labor and manage symptoms</p>
-          </div>
+
+        <div className="space-y-3 mb-6">
+          {thirdTrimesterExercises.map((exercise, idx) => (
+            <div
+              key={idx}
+              className="flex items-center justify-between p-3 rounded-lg bg-white/50 hover:bg-white/80 transition-colors"
+            >
+              <div>
+                <div className="font-semibold text-sm">{exercise.name}</div>
+                <div className="text-xs text-gray-600">
+                  {exercise.sets} sets × {exercise.reps}
+                </div>
+              </div>
+              <span className="text-xs px-2 py-1 rounded-full bg-[var(--color-blush)]/30">
+                {exercise.difficulty}
+              </span>
+            </div>
+          ))}
         </div>
+
+        <Button
+          onClick={() => setIsModalOpen(true)}
+          className="w-full bg-[var(--color-rose)] hover:bg-[var(--color-rose)]/90 text-white"
+        >
+          View Detailed Exercises
+        </Button>
       </div>
 
-      {/* Exercise Cards */}
-      <div className="grid md:grid-cols-2 lg:grid-cols-1 gap-6">
-        {exercises.map((exercise) => (
-          <ExerciseCard key={exercise.name} {...(exercise as any)} />
-        ))}
-      </div>
+      <TipBox type="tip" title="Third Trimester Exercise Tips">
+        Recommended frequency: 3-4 days per week at gentle intensity. Focus on pelvic floor, flexibility, and comfort. 
+        Your key goal is to prepare for labor and manage symptoms. Listen to your body and modify as needed.
+      </TipBox>
 
-      {/* Labor Preparation */}
-      <div className="bg-mint-cream/30 rounded-2xl p-8 border border-mint-cream">
-        <h3 className="text-2xl font-bold text-dark-text mb-4">🤰 Preparing Your Body for Labor</h3>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <h4 className="font-semibold text-dark-text mb-3">Pelvic Floor Strength</h4>
-            <p className="text-sm text-gray-700 mb-3">
-              A strong pelvic floor helps during labor and recovery. Kegel exercises are your best friend now.
-            </p>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Do 3 sets of 10 Kegels daily</li>
-              <li>• Hold each contraction 3-5 seconds</li>
-              <li>• Relax between contractions</li>
-              <li>• Do them anywhere, anytime</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-dark-text mb-3">Perineal Massage</h4>
-            <p className="text-sm text-gray-700 mb-3">
-              Starting at 34 weeks, gentle perineal massage may reduce tearing risk.
-            </p>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Use clean hands or partner's hands</li>
-              <li>• Apply warm oil or lubricant</li>
-              <li>• Gently stretch perineal area</li>
-              <li>• Do 5-10 minutes daily</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-dark-text mb-3">Squatting Practice</h4>
-            <p className="text-sm text-gray-700 mb-3">
-              Squatting opens the pelvis and is a great labor position. Practice now.
-            </p>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Hold onto a sturdy object</li>
-              <li>• Lower into a squat slowly</li>
-              <li>• Hold for 30 seconds</li>
-              <li>• Practice several times daily</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-dark-text mb-3">Breathing Exercises</h4>
-            <p className="text-sm text-gray-700 mb-3">
-              Deep breathing calms your nervous system and prepares you for labor.
-            </p>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Practice belly breathing</li>
-              <li>• Inhale for 4 counts</li>
-              <li>• Exhale for 4 counts</li>
-              <li>• Do 5-10 minutes daily</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Common Discomforts */}
-      <div className="bg-warm-peach/20 rounded-2xl p-8 border border-warm-peach">
-        <h3 className="text-2xl font-bold text-dark-text mb-4">Managing Third Trimester Discomforts</h3>
-        <div className="grid md:grid-cols-2 gap-6">
-          <div>
-            <h4 className="font-semibold text-dark-text mb-3">Back Pain</h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Prenatal yoga and stretching</li>
-              <li>• Pelvic support belt</li>
-              <li>• Proper posture and body mechanics</li>
-              <li>• Warm baths or heating pads</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-dark-text mb-3">Swelling</h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Elevate legs when possible</li>
-              <li>• Wear compression socks</li>
-              <li>• Stay hydrated</li>
-              <li>• Gentle walking and swimming</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-dark-text mb-3">Insomnia</h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Prenatal yoga and meditation</li>
-              <li>• Pregnancy pillow for support</li>
-              <li>• Avoid caffeine after 2pm</li>
-              <li>• Establish sleep routine</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-dark-text mb-3">Braxton Hicks</h4>
-            <ul className="space-y-2 text-sm text-gray-700">
-              <li>• Change positions</li>
-              <li>• Take a warm bath</li>
-              <li>• Stay hydrated</li>
-              <li>• Practice relaxation techniques</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      {/* Warning Signs */}
-      <div className="bg-soft-blush/20 rounded-2xl p-8 border border-soft-blush">
-        <h3 className="text-2xl font-bold text-dark-text mb-4">⚠️ When to Stop Exercise and Call Your Doctor:</h3>
-        <ul className="space-y-2">
-          <li className="flex items-start">
-            <span className="text-soft-blush font-bold mr-3">•</span>
-            <span className="text-gray-700">Vaginal bleeding or fluid leakage</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-soft-blush font-bold mr-3">•</span>
-            <span className="text-gray-700">Severe abdominal or pelvic pain</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-soft-blush font-bold mr-3">•</span>
-            <span className="text-gray-700">Persistent contractions (more than 6 per hour)</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-soft-blush font-bold mr-3">•</span>
-            <span className="text-gray-700">Chest pain or severe shortness of breath</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-soft-blush font-bold mr-3">•</span>
-            <span className="text-gray-700">Dizziness, fainting, or vision changes</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-soft-blush font-bold mr-3">•</span>
-            <span className="text-gray-700">Decreased fetal movement</span>
-          </li>
-        </ul>
-      </div>
+      <GymExerciseModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        phase="Third Trimester"
+        exercises={thirdTrimesterExercises}
+      />
     </div>
   );
 }
