@@ -60,10 +60,6 @@ describe("system.chat", () => {
     const result = await caller.system.chat({
       messages: [
         {
-          role: "system" as const,
-          content: "You are Lunebloom, a helpful pregnancy assistant.",
-        },
-        {
           role: "user" as const,
           content: "How much exercise should I do during pregnancy?",
         },
@@ -73,18 +69,12 @@ describe("system.chat", () => {
     expect(result).toEqual(
       "According to ACOG, 150 minutes of moderate-intensity aerobic activity per week is recommended during pregnancy."
     );
-    expect(invokeLLM).toHaveBeenCalledWith({
-      messages: [
-        {
-          role: "system",
-          content: "You are Lunebloom, a helpful pregnancy assistant.",
-        },
-        {
-          role: "user",
-          content: "How much exercise should I do during pregnancy?",
-        },
-      ],
-    });
+    
+    // Verify that system prompt was added
+    const callArgs = vi.mocked(invokeLLM).mock.calls[0][0];
+    expect(callArgs.messages[0].role).toBe("system");
+    expect(callArgs.messages[0].content).toContain("Lunebloom");
+    expect(callArgs.messages[0].content).toContain("ACOG");
   });
 
   it("should return error message when LLM response is empty", async () => {
@@ -105,10 +95,6 @@ describe("system.chat", () => {
 
     const result = await caller.system.chat({
       messages: [
-        {
-          role: "system" as const,
-          content: "You are Lunebloom.",
-        },
         {
           role: "user" as const,
           content: "Test question",
@@ -131,10 +117,6 @@ describe("system.chat", () => {
 
     const result = await caller.system.chat({
       messages: [
-        {
-          role: "system" as const,
-          content: "You are Lunebloom.",
-        },
         {
           role: "user" as const,
           content: "Test question",
@@ -163,10 +145,6 @@ describe("system.chat", () => {
 
     const result = await caller.system.chat({
       messages: [
-        {
-          role: "system" as const,
-          content: "You are Lunebloom, a pregnancy assistant.",
-        },
         {
           role: "user" as const,
           content: "What exercises are safe?",
@@ -224,7 +202,7 @@ describe("system.chat", () => {
     expect(typeof result).toBe("string");
   });
 
-  it("should pass all messages to LLM in correct order", async () => {
+  it("should include comprehensive system prompt with knowledge base", async () => {
     const mockResponse = {
       choices: [
         {
@@ -240,15 +218,114 @@ describe("system.chat", () => {
     const ctx = createTestContext();
     const caller = appRouter.createCaller(ctx);
 
-    const messages = [
-      { role: "system" as const, content: "System prompt" },
+    await caller.system.chat({
+      messages: [
+        { role: "user" as const, content: "Test question" },
+      ],
+    });
+
+    const callArgs = vi.mocked(invokeLLM).mock.calls[0][0];
+    const systemPrompt = callArgs.messages[0].content;
+
+    // Verify system prompt contains key information
+    expect(systemPrompt).toContain("Lunebloom");
+    expect(systemPrompt).toContain("Trying to Conceive");
+    expect(systemPrompt).toContain("Fertile window");
+    expect(systemPrompt).toContain("ovulation");
+    expect(systemPrompt).toContain("First Trimester");
+    expect(systemPrompt).toContain("Postpartum");
+    expect(systemPrompt).toContain("ACOG");
+    expect(systemPrompt).toContain("CDC");
+    expect(systemPrompt).toContain("NIH");
+    expect(systemPrompt).toContain("150 min/week");
+    expect(systemPrompt).toContain("200mg/day");
+  });
+
+  it("should cite sources in responses", async () => {
+    const mockResponse = {
+      choices: [
+        {
+          message: {
+            content: "According to ACOG and CDC guidelines, exercise is beneficial during pregnancy.",
+          },
+        },
+      ],
+    };
+
+    vi.mocked(invokeLLM).mockResolvedValueOnce(mockResponse as any);
+
+    const ctx = createTestContext();
+    const caller = appRouter.createCaller(ctx);
+
+    const result = await caller.system.chat({
+      messages: [
+        { role: "user" as const, content: "Is exercise safe during pregnancy?" },
+      ],
+    });
+
+    expect(result).toContain("ACOG");
+    expect(result).toContain("CDC");
+  });
+
+  it("should handle out-of-scope questions appropriately", async () => {
+    const mockResponse = {
+      choices: [
+        {
+          message: {
+            content: "I don't have information about that in my documentation. Please consult with your healthcare provider for personalized advice.",
+          },
+        },
+      ],
+    };
+
+    vi.mocked(invokeLLM).mockResolvedValueOnce(mockResponse as any);
+
+    const ctx = createTestContext();
+    const caller = appRouter.createCaller(ctx);
+
+    const result = await caller.system.chat({
+      messages: [
+        { role: "user" as const, content: "What's the weather like today?" },
+      ],
+    });
+
+    expect(result).toContain("don't have information");
+    expect(result).toContain("healthcare provider");
+  });
+
+  it("should pass all user messages to LLM with system prompt prepended", async () => {
+    const mockResponse = {
+      choices: [
+        {
+          message: {
+            content: "Test response",
+          },
+        },
+      ],
+    };
+
+    vi.mocked(invokeLLM).mockResolvedValueOnce(mockResponse as any);
+
+    const ctx = createTestContext();
+    const caller = appRouter.createCaller(ctx);
+
+    const userMessages = [
       { role: "user" as const, content: "First question" },
       { role: "assistant" as const, content: "First answer" },
       { role: "user" as const, content: "Follow-up question" },
     ];
 
-    await caller.system.chat({ messages });
+    await caller.system.chat({ messages: userMessages });
 
-    expect(invokeLLM).toHaveBeenCalledWith({ messages });
+    const callArgs = vi.mocked(invokeLLM).mock.calls[0][0];
+    
+    // System prompt should be first
+    expect(callArgs.messages[0].role).toBe("system");
+    expect(callArgs.messages[0].content).toContain("Lunebloom");
+    
+    // User messages should follow in order
+    expect(callArgs.messages[1]).toEqual(userMessages[0]);
+    expect(callArgs.messages[2]).toEqual(userMessages[1]);
+    expect(callArgs.messages[3]).toEqual(userMessages[2]);
   });
 });

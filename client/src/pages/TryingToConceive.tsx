@@ -103,7 +103,7 @@ export default function TryingToConceive() {
       <div className="container py-8">
         {/* Quick Navigation */}
         <div className="flex flex-wrap gap-2 mb-8 justify-center">
-          {["Nutrition", "Exercise", "Medical Care", "Skincare", "Mental Health", "Mocktails"].map((section) => (
+          {["Fertile Window", "Ovulation Testing", "Nutrition", "Exercise", "Medical Care", "Skincare", "Mental Health", "Mocktails"].map((section) => (
             <a 
               key={section} 
               href={`#${section.toLowerCase().replace(" ", "-")}`}
@@ -123,6 +123,184 @@ export default function TryingToConceive() {
             <sup className="text-[var(--color-rose)]">[1]</sup>
           </p>
         </div>
+
+        {/* Fertile Window Section */}
+        <ContentSection title="Understanding Your Fertile Window" icon={Heart} id="fertile-window">
+          <p className="mb-6">
+            The fertile window is the period during your menstrual cycle when pregnancy is most likely to occur. 
+            According to <strong>ACOG</strong>, the fertile window includes the 5 days before ovulation and the day 
+            of ovulation itself. Understanding and tracking your fertile window can help you time intercourse 
+            optimally for conception.
+          </p>
+
+          <h3 className="text-xl font-[var(--font-heading)] font-semibold mt-8 mb-4">
+            How to Calculate Your Fertile Window
+          </h3>
+
+          <div className="p-6 rounded-xl bg-[var(--color-blush)]/20 mb-6">
+            <h4 className="font-semibold mb-4">Step-by-Step Calculation:</h4>
+            <ol className="space-y-3 list-decimal list-inside text-sm">
+              <li>Track your menstrual cycle for at least 3 months (count from day 1 of your period)</li>
+              <li>Identify your shortest cycle length (e.g., 26 days)</li>
+              <li>Identify your longest cycle length (e.g., 32 days)</li>
+              <li>Subtract 18 from your shortest cycle = First fertile day (26 - 18 = day 8)</li>
+              <li>Subtract 11 from your longest cycle = Last fertile day (32 - 11 = day 21)</li>
+              <li>Your fertile window is from day 8 to day 21 of your cycle</li>
+            </ol>
+          </div>
+
+          <TipBox type="tip" title="Standard Days Method">
+            If your cycle is consistently between 26-32 days, the Standard Days Method (ACOG-approved) indicates 
+            that days 8-19 are your most fertile days. This is a simple and reliable method for regular cycles.
+          </TipBox>
+
+          <h3 className="text-xl font-[var(--font-heading)] font-semibold mt-8 mb-4">
+            Best Timing for Intercourse
+          </h3>
+
+          <div className="grid md:grid-cols-2 gap-6 mt-6">
+            <div className="p-6 rounded-xl bg-[var(--color-sage)]/20">
+              <h4 className="font-semibold mb-3">Optimal Timing (ACOG & NIH Research)</h4>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--color-sage)] mt-2 flex-shrink-0" />
+                  <span><strong>1-2 days BEFORE ovulation:</strong> Greatest chance of conception</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--color-sage)] mt-2 flex-shrink-0" />
+                  <span><strong>Day of ovulation:</strong> Pregnancy still possible</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--color-sage)] mt-2 flex-shrink-0" />
+                  <span><strong>Sperm lifespan:</strong> 3-5 days in female reproductive tract</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--color-sage)] mt-2 flex-shrink-0" />
+                  <span><strong>Egg lifespan:</strong> 12-24 hours after release</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-xl bg-[var(--color-mint)]/20">
+              <h4 className="font-semibold mb-3">Recommended Frequency</h4>
+              <ul className="space-y-2 text-sm">
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--color-mint)] mt-2 flex-shrink-0" />
+                  <span><strong>Every 2-3 days:</strong> Throughout your entire cycle ensures sperm is present during fertile window</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--color-mint)] mt-2 flex-shrink-0" />
+                  <span><strong>Daily intercourse:</strong> Not necessary and may reduce sperm count</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="w-2 h-2 rounded-full bg-[var(--color-mint)] mt-2 flex-shrink-0" />
+                  <span><strong>Stress-free approach:</strong> Reduces pressure and improves sexual satisfaction</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </ContentSection>
+
+        {/* Ovulation Testing Section */}
+        <ContentSection title="Ovulation Prediction & Testing" icon={Stethoscope} id="ovulation-testing">
+          <p className="mb-6">
+            There are several methods to predict or confirm ovulation, each with different levels of accuracy. 
+            According to <strong>ACOG</strong>, combining multiple methods provides the most reliable results.
+          </p>
+
+          <h3 className="text-xl font-[var(--font-heading)] font-semibold mt-8 mb-4">
+            Ovulation Prediction Methods
+          </h3>
+
+          <div className="space-y-6">
+            <div className="p-6 rounded-xl border-2 border-[var(--color-rose)]/30 bg-[var(--color-rose)]/5">
+              <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-[var(--color-rose)]" />
+                Ovulation Predictor Kits (OPKs) - Most Accurate
+              </h4>
+              <ul className="space-y-2 text-sm mb-4">
+                <li><strong>How it works:</strong> Detects luteinizing hormone (LH) surge in urine</li>
+                <li><strong>Timing:</strong> LH surge occurs 24-36 hours before ovulation</li>
+                <li><strong>Best time to test:</strong> Morning (second urine of the day)</li>
+                <li><strong>Accuracy:</strong> Very sensitive and specific for ovulation detection (NIH)</li>
+                <li><strong>Cost:</strong> $15-50 for a pack of tests</li>
+              </ul>
+              <TipBox type="tip" title="OPK Pro Tip">
+                Start testing a few days before your expected ovulation date. A positive result means ovulation 
+                will likely occur within 24-36 hours.
+              </TipBox>
+            </div>
+
+            <div className="p-6 rounded-xl border-2 border-[var(--color-peach)]/30 bg-[var(--color-peach)]/5">
+              <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-[var(--color-peach)]" />
+                Basal Body Temperature (BBT) - Confirmatory
+              </h4>
+              <ul className="space-y-2 text-sm mb-4">
+                <li><strong>How it works:</strong> Temperature rises slightly after ovulation</li>
+                <li><strong>Temperature rise:</strong> Typically less than 0.5°F (0.3°C)</li>
+                <li><strong>When to measure:</strong> Immediately upon waking, before getting out of bed</li>
+                <li><strong>Timing:</strong> Confirms ovulation has occurred (not predictive)</li>
+                <li><strong>Best for:</strong> Identifying patterns after 3+ months of tracking</li>
+              </ul>
+              <TipBox type="info" title="BBT Tracking">
+                Use a basal thermometer (more precise than regular thermometers). Record temperature at the same 
+                time each morning for accurate results.
+              </TipBox>
+            </div>
+
+            <div className="p-6 rounded-xl border-2 border-[var(--color-lavender)]/30 bg-[var(--color-lavender)]/5">
+              <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-[var(--color-lavender)]" />
+                Cervical Mucus Method - Natural Indicator
+              </h4>
+              <ul className="space-y-2 text-sm mb-4">
+                <li><strong>How it works:</strong> Cervical mucus changes throughout your cycle</li>
+                <li><strong>Before ovulation:</strong> Clear, stretchy, slippery (like egg white) - FERTILE</li>
+                <li><strong>After ovulation:</strong> Thick and sticky - LESS FERTILE</li>
+                <li><strong>Why it matters:</strong> Slippery mucus helps sperm reach the egg</li>
+                <li><strong>Observation:</strong> Check consistency daily and record changes</li>
+              </ul>
+              <TipBox type="tip" title="Cervical Mucus Observation">
+                Check your cervical mucus throughout the day. The most fertile mucus is clear, stretchy, and 
+                slippery - similar to raw egg white.
+              </TipBox>
+            </div>
+
+            <div className="p-6 rounded-xl border-2 border-[var(--color-mint)]/30 bg-[var(--color-mint)]/5">
+              <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-[var(--color-mint)]" />
+                Progesterone Blood Test - Medical Confirmation
+              </h4>
+              <ul className="space-y-2 text-sm mb-4">
+                <li><strong>How it works:</strong> Blood test measuring progesterone levels</li>
+                <li><strong>When to test:</strong> 7 days after ovulation (luteal phase)</li>
+                <li><strong>Purpose:</strong> Confirms ovulation has occurred</li>
+                <li><strong>Not predictive:</strong> Used to confirm ovulation, not predict it</li>
+                <li><strong>Cost:</strong> Usually covered by insurance with doctor's order</li>
+              </ul>
+            </div>
+
+            <div className="p-6 rounded-xl border-2 border-[var(--color-sage)]/30 bg-[var(--color-sage)]/5">
+              <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
+                <span className="w-3 h-3 rounded-full bg-[var(--color-sage)]" />
+                Fertility Tracking Apps - Supportive Tool
+              </h4>
+              <ul className="space-y-2 text-sm mb-4">
+                <li><strong>Important note:</strong> ACOG states that apps based on cycle length alone cannot accurately predict ovulation</li>
+                <li><strong>Best use:</strong> Combined with OPKs, BBT, or cervical mucus tracking</li>
+                <li><strong>Benefits:</strong> Records patterns and predicts fertile window based on your data</li>
+                <li><strong>Accuracy improves:</strong> After 3+ months of consistent tracking</li>
+                <li><strong>Popular options:</strong> Fertility Friend, Flo, Premom, Natural Cycles</li>
+              </ul>
+            </div>
+          </div>
+
+          <TipBox type="love" title="Combining Methods for Best Results">
+            Using multiple tracking methods together provides the most accurate ovulation prediction. For example, 
+            combine OPKs with cervical mucus observation and BBT tracking for comprehensive fertility awareness.
+          </TipBox>
+        </ContentSection>
 
         {/* Nutrition Section */}
         <ContentSection title="Nutrition & Supplements" icon={Leaf} id="nutrition">
