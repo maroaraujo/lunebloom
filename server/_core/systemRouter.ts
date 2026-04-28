@@ -1,5 +1,6 @@
 import { z } from "zod";
 import { notifyOwner } from "./notification";
+import { invokeLLM } from "./llm";
 import { adminProcedure, publicProcedure, router } from "./trpc";
 
 export const systemRouter = router({
@@ -25,5 +26,31 @@ export const systemRouter = router({
       return {
         success: delivered,
       } as const;
+    }),
+
+  chat: publicProcedure
+    .input(
+      z.object({
+        messages: z.array(
+          z.object({
+            role: z.enum(["system", "user", "assistant"]),
+            content: z.string(),
+          })
+        ),
+      })
+    )
+    .mutation(async ({ input }) => {
+      const response = await invokeLLM({
+        messages: input.messages,
+      });
+
+      const messageContent = response.choices?.[0]?.message?.content;
+      let assistantMessage = "I encountered an error processing your request.";
+      
+      if (typeof messageContent === "string") {
+        assistantMessage = messageContent;
+      }
+      
+      return assistantMessage;
     }),
 });

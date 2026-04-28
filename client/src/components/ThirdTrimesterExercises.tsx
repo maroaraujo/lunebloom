@@ -107,14 +107,56 @@ export default function ThirdTrimesterExercises() {
 
   return (
     <div className="space-y-6">
+      {/* Regular Exercise Suggestions */}
       <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-blush)]/20 to-[var(--color-lavender)]/20">
         <h3 className="font-[var(--font-heading)] font-semibold text-lg mb-4">
-          Safe Gym Exercises for Third Trimester
+          Regular Exercise Suggestions
         </h3>
         <p className="text-sm mb-4">
-          The third trimester is about preparing your body for labor and managing discomfort. 
-          Exercise becomes gentler and more focused on pelvic floor strengthening and flexibility. 
-          Listen to your body and modify as needed—your comfort and safety are paramount.
+          The third trimester is about preparing your body for labor and managing discomfort. According to <strong>ACOG</strong>, 
+          continue with <strong>moderate-intensity aerobic activity at 3-4 days per week</strong> at a gentler intensity. 
+          Exercise becomes more focused on pelvic floor strengthening, flexibility, and comfort. Listen to your body and modify as needed.
+        </p>
+
+        <div className="space-y-3">
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-blush)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Walking</div>
+              <div className="text-xs text-gray-600">45-60 minutes daily - Prepares body for labor, reduces swelling</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-blush)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Swimming or Water Aerobics</div>
+              <div className="text-xs text-gray-600">20-30 minutes - Relieves back pain, supports growing body</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-blush)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Prenatal Yoga (Gentle)</div>
+              <div className="text-xs text-gray-600">30-45 minutes - Flexibility, breathing, mental preparation</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-blush)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Pelvic Floor Exercises</div>
+              <div className="text-xs text-gray-600">Daily - Essential for labor preparation and recovery</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Safe Gym Exercises Section */}
+      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-sage)]/20 to-[var(--color-lavender)]/20">
+        <h3 className="font-[var(--font-heading)] font-semibold text-lg mb-4">
+          Safe Gym Exercises
+        </h3>
+        <p className="text-sm mb-4">
+          Detailed gym exercises specifically designed for the third trimester. Each exercise includes modifications and safety tips.
         </p>
 
         <div className="space-y-3 mb-6">
@@ -144,9 +186,9 @@ export default function ThirdTrimesterExercises() {
         </Button>
       </div>
 
-      <TipBox type="tip" title="Third Trimester Exercise Tips">
-        Recommended frequency: 3-4 days per week at gentle intensity. Focus on pelvic floor, flexibility, and comfort. 
-        Your key goal is to prepare for labor and manage symptoms. Listen to your body and modify as needed.
+      <TipBox type="warning" title="Important Reminders">
+        Listen to your body and modify exercises as needed. Your comfort and safety are paramount. 
+        Stop exercise immediately if you experience persistent contractions (more than 6 per hour), vaginal bleeding, chest pain, or severe shortness of breath. Contact your healthcare provider.
       </TipBox>
 
       <GymExerciseModal

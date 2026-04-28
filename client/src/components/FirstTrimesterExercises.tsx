@@ -107,13 +107,56 @@ export default function FirstTrimesterExercises() {
 
   return (
     <div className="space-y-6">
+      {/* Regular Exercise Suggestions */}
       <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-lavender)]/20 to-[var(--color-mint)]/20">
         <h3 className="font-[var(--font-heading)] font-semibold text-lg mb-4">
-          Safe Gym Exercises for First Trimester
+          Regular Exercise Suggestions
         </h3>
         <p className="text-sm mb-4">
-          During the first trimester, focus on maintaining fitness and building strength. 
+          During the first trimester, focus on maintaining fitness and building strength for pregnancy. 
+          According to <strong>ACOG</strong>, aim for at least <strong>150 minutes of moderate-intensity aerobic activity per week</strong>. 
           Most exercises are safe, but avoid contact sports and exercises lying flat on your back after 12 weeks.
+        </p>
+
+        <div className="space-y-3">
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-mint)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Walking</div>
+              <div className="text-xs text-gray-600">30 minutes daily - Low impact, safe throughout pregnancy</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-mint)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Swimming or Water Aerobics</div>
+              <div className="text-xs text-gray-600">30-45 minutes - Joint-friendly, relieves pressure</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-mint)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Prenatal Yoga</div>
+              <div className="text-xs text-gray-600">20-30 minutes - Flexibility, breathing, relaxation</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-mint)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Stationary Cycling</div>
+              <div className="text-xs text-gray-600">20-30 minutes - Low-impact cardio</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Safe Gym Exercises Section */}
+      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-sage)]/20 to-[var(--color-lavender)]/20">
+        <h3 className="font-[var(--font-heading)] font-semibold text-lg mb-4">
+          Safe Gym Exercises
+        </h3>
+        <p className="text-sm mb-4">
+          Detailed gym exercises specifically designed for the first trimester. Each exercise includes modifications and safety tips.
         </p>
 
         <div className="space-y-3 mb-6">
@@ -143,9 +186,9 @@ export default function FirstTrimesterExercises() {
         </Button>
       </div>
 
-      <TipBox type="tip" title="First Trimester Exercise Tips">
+      <TipBox type="warning" title="Important Reminders">
         Stay hydrated, avoid overheating, and listen to your body. It's normal to feel more tired—rest when you need to. 
-        If you experience any pain, dizziness, or bleeding, stop and contact your healthcare provider.
+        If you experience any pain, dizziness, or bleeding, stop and contact your healthcare provider immediately.
       </TipBox>
 
       <GymExerciseModal

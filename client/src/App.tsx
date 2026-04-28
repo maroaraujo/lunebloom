@@ -5,6 +5,7 @@ import NotFound from "@/pages/NotFound";
 import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
+import { AskLunebloomChatbot } from "./components/AskLunebloomChatbot";
 import Home from "./pages/Home";
 import TryingToConceive from "./pages/TryingToConceive";
 import FirstTrimester from "./pages/FirstTrimester";
@@ -42,6 +43,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <AskLunebloomChatbot />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

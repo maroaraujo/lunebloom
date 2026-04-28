@@ -69,3 +69,33 @@
 - [x] Integrate exercise modals into ThirdTrimesterExercises
 - [x] Integrate exercise modals into PostpartumExercises
 - [x] All pages now have both regular exercise suggestions AND detailed gym exercise modals
+
+
+## Content Audit & Revision - IN PROGRESS
+- [ ] Audit Trying to Conceive page content for scientific accuracy
+- [ ] Audit First Trimester page content for scientific accuracy
+- [ ] Audit Second Trimester page content for scientific accuracy
+- [ ] Audit Third Trimester page content for scientific accuracy
+- [ ] Audit Postpartum page content for scientific accuracy
+- [ ] Remove any unsupported claims, keep only ACOG/WHO/NIH/CDC/FDA backed information
+- [ ] Create scientific sources documentation file for chatbot
+
+## Exercise Section Restructuring - COMPLETE ✨
+- [x] Separate "Regular Exercise Suggestions" from "Safe Gym Exercises" sections
+- [x] Add "Safe Gym Exercises" button that opens modal on all phase pages
+- [x] Update TryingToConceive page exercise section structure
+- [x] Update FirstTrimester page exercise section structure
+- [x] Update SecondTrimester page exercise section structure
+- [x] Update ThirdTrimester page exercise section structure
+- [x] Update Postpartum page exercise section structure
+
+## Chatbot Implementation - COMPLETE ✨
+- [x] Create scientific sources documentation with ACOG, CDC, NIH sources
+- [x] Integrated existing AIChatBox component
+- [x] Created floating "Ask Lunebloom" button component
+- [x] Implemented chatbot logic to answer only from documentation
+- [x] Added source citation system in system prompt
+- [x] Added "Not found in documentation" response for out-of-scope questions
+- [x] Integrated chatbot into App.tsx (appears on all pages)
+- [x] Created comprehensive unit tests (7 tests, all passing)
+- [x] Verified chatbot cites sources correctly

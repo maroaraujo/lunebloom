@@ -107,13 +107,58 @@ export default function PostpartumExercises() {
 
   return (
     <div className="space-y-6">
+      {/* Regular Exercise Suggestions */}
       <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-mint)]/20 to-[var(--color-cream)]/20">
         <h3 className="font-[var(--font-heading)] font-semibold text-lg mb-4">
-          Safe Gym Exercises for Postpartum Recovery
+          Regular Exercise Suggestions
         </h3>
         <p className="text-sm mb-4">
-          Postpartum exercise should focus on gentle, progressive recovery. Always get medical clearance (typically 6 weeks 
-          postpartum, or 8-12 weeks after C-section) before starting exercise. Listen to your body and prioritize healing.
+          Postpartum exercise should focus on gentle, progressive recovery. According to <strong>ACOG</strong>, 
+          once you have medical clearance (typically 6 weeks after vaginal delivery, or 8-12 weeks after C-section), 
+          aim for <strong>150 minutes of moderate-intensity aerobic activity per week</strong>. 
+          Physical activity can help prevent postpartum depression and support weight loss. Listen to your body and prioritize healing.
+        </p>
+
+        <div className="space-y-3">
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-mint)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Walking</div>
+              <div className="text-xs text-gray-600">20-30 minutes daily - Low-impact, can do with baby</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-mint)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Swimming or Water Aerobics</div>
+              <div className="text-xs text-gray-600">20-30 minutes - Full-body, low-impact, after bleeding stops</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-mint)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Pelvic Floor Exercises</div>
+              <div className="text-xs text-gray-600">Daily - Essential for recovery and long-term health</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-mint)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Gentle Strength Training</div>
+              <div className="text-xs text-gray-600">2-3 times per week - Rebuilds muscle after pregnancy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Safe Gym Exercises Section */}
+      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-sage)]/20 to-[var(--color-cream)]/20">
+        <h3 className="font-[var(--font-heading)] font-semibold text-lg mb-4">
+          Safe Gym Exercises
+        </h3>
+        <p className="text-sm mb-4">
+          Detailed gym exercises specifically designed for postpartum recovery. Each exercise includes modifications and safety tips. 
+          Always get medical clearance before starting any exercise program.
         </p>
 
         <div className="space-y-3 mb-6">
@@ -146,10 +191,11 @@ export default function PostpartumExercises() {
       <TipBox type="warning" title="Important Postpartum Safety">
         <ul className="list-disc list-inside space-y-1">
           <li>Wait for medical clearance before starting exercise (6 weeks vaginal, 8-12 weeks C-section)</li>
-          <li>Stop immediately if you experience pain, bleeding, or dizziness</li>
+          <li>Stop immediately if you experience pain, increased bleeding, or dizziness</li>
           <li>Avoid high-impact activities and heavy lifting initially</li>
-          <li>If breastfeeding, exercise after feeding to avoid discomfort</li>
+          <li>If breastfeeding, exercise after feeding to avoid discomfort and maintain milk supply</li>
           <li>Stay well-hydrated, especially if breastfeeding</li>
+          <li>If you have diastasis recti, consult a physical therapist before intense core work</li>
         </ul>
       </TipBox>
 

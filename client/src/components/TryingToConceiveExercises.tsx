@@ -107,13 +107,55 @@ export default function TryingToConceiveExercises() {
 
   return (
     <div className="space-y-6">
+      {/* Regular Exercise Suggestions */}
       <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-peach)]/20 to-[var(--color-lavender)]/20">
         <h3 className="font-[var(--font-heading)] font-semibold text-lg mb-4">
-          Safe Gym Exercises for Trying to Conceive
+          Regular Exercise Suggestions
         </h3>
         <p className="text-sm mb-4">
-          Regular exercise during the trying-to-conceive phase can improve fertility by enhancing cardiovascular health, 
-          reducing stress, and optimizing hormone levels. Focus on moderate-intensity activities and pelvic floor strengthening.
+          Regular physical activity improves fertility by maintaining a healthy weight, reducing stress, and improving blood flow to reproductive organs. 
+          According to <strong>ACOG</strong>, aim for at least <strong>150 minutes of moderate-intensity aerobic activity per week</strong> during the trying-to-conceive phase.
+        </p>
+        
+        <div className="space-y-3">
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-rose)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Walking</div>
+              <div className="text-xs text-gray-600">30 minutes daily - Low impact, improves circulation</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-rose)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Swimming or Water Aerobics</div>
+              <div className="text-xs text-gray-600">30-45 minutes - Full body, joint-friendly</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-rose)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Strength Training</div>
+              <div className="text-xs text-gray-600">2-3 times per week - Builds muscle and supports metabolism</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-rose)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Cycling</div>
+              <div className="text-xs text-gray-600">30 minutes - Low impact cardio, builds leg strength</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Safe Gym Exercises Section */}
+      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-sage)]/20 to-[var(--color-lavender)]/20">
+        <h3 className="font-[var(--font-heading)] font-semibold text-lg mb-4">
+          Safe Gym Exercises
+        </h3>
+        <p className="text-sm mb-4">
+          Detailed gym exercises specifically designed for the trying-to-conceive phase. Each exercise includes sets, reps, modifications, and safety tips.
         </p>
 
         <div className="space-y-3 mb-6">
@@ -143,9 +185,9 @@ export default function TryingToConceiveExercises() {
         </Button>
       </div>
 
-      <TipBox type="tip" title="Trying to Conceive Exercise Tips">
-        Aim for 150 minutes of moderate-intensity aerobic activity per week. Include strength training 2-3 times per week. 
-        Avoid overexercising, as excessive exercise can interfere with fertility. Listen to your body and rest when needed.
+      <TipBox type="warning" title="Important Reminder">
+        Avoid overexercising, as excessive high-intensity exercise (more than 60 minutes daily) can interfere with fertility. 
+        Moderate, consistent activity is more beneficial than extreme workouts. Listen to your body and rest when needed.
       </TipBox>
 
       <GymExerciseModal

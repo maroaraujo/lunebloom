@@ -108,13 +108,56 @@ export default function SecondTrimesterExercises() {
 
   return (
     <div className="space-y-6">
+      {/* Regular Exercise Suggestions */}
       <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-peach)]/20 to-[var(--color-blush)]/20">
         <h3 className="font-[var(--font-heading)] font-semibold text-lg mb-4">
-          Safe Gym Exercises for Second Trimester
+          Regular Exercise Suggestions
         </h3>
         <p className="text-sm mb-4">
-          The second trimester is often called the honeymoon phase of pregnancy. You likely have more energy and your belly is showing, 
-          making it easier to modify exercises appropriately. Focus on maintaining strength and preparing your body for labor.
+          The second trimester is often called the "honeymoon phase" of pregnancy. You likely have more energy and your belly is showing, 
+          making it easier to modify exercises appropriately. According to <strong>ACOG</strong>, continue with <strong>150 minutes of moderate-intensity aerobic activity per week</strong>. 
+          Focus on maintaining strength and preparing your body for labor. Important: Avoid lying flat on your back for extended periods after 20 weeks due to aortocaval compression.
+        </p>
+
+        <div className="space-y-3">
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-peach)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Walking</div>
+              <div className="text-xs text-gray-600">30-45 minutes daily - Safe, comfortable, low-impact</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-peach)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Swimming or Water Aerobics</div>
+              <div className="text-xs text-gray-600">30-45 minutes - Relieves joint pressure, feels amazing</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-peach)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Prenatal Yoga</div>
+              <div className="text-xs text-gray-600">20-30 minutes - Flexibility, breathing, relaxation</div>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <span className="w-2 h-2 rounded-full bg-[var(--color-peach)] mt-2 flex-shrink-0" />
+            <div>
+              <div className="font-semibold text-sm">Stationary Cycling</div>
+              <div className="text-xs text-gray-600">20-30 minutes - Low-impact cardio</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Safe Gym Exercises Section */}
+      <div className="p-6 rounded-xl bg-gradient-to-br from-[var(--color-sage)]/20 to-[var(--color-blush)]/20">
+        <h3 className="font-[var(--font-heading)] font-semibold text-lg mb-4">
+          Safe Gym Exercises
+        </h3>
+        <p className="text-sm mb-4">
+          Detailed gym exercises specifically designed for the second trimester. Each exercise includes modifications and safety tips.
         </p>
 
         <div className="space-y-3 mb-6">
@@ -144,10 +187,9 @@ export default function SecondTrimesterExercises() {
         </Button>
       </div>
 
-      <TipBox type="tip" title="Second Trimester Exercise Tips">
-        You may feel stronger now, but avoid lying flat on your back for extended periods. 
-        Stay hydrated, wear supportive shoes, and do not push yourself too hard. 
-        This is a great time to bond with your baby while exercising!
+      <TipBox type="warning" title="Important Reminders">
+        Avoid lying flat on your back for extended periods (especially after 20 weeks). Stay hydrated, wear supportive shoes, and listen to your body. 
+        If you experience pain, dizziness, or shortness of breath, stop and contact your healthcare provider.
       </TipBox>
 
       <GymExerciseModal
